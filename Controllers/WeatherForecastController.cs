@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JWT.Controllers
@@ -29,5 +30,27 @@ namespace JWT.Controllers
             })
             .ToArray();
         }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult Login([FromBody] UserDto userDto)
+        {
+            AuthenticateService service = new AuthenticateService();
+            var token = service.Authenticate();
+            //userDto = service.GetUserDataForLogin();
+
+            return Ok(new
+            {
+                Response = "Successful",
+                Token = token,
+                Data = userDto
+            });
+        }
+    }
+
+    public class UserDto
+    {
+        public string UserName { get; set; }
+        public string Password { get; set; }
     }
 }
