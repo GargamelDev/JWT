@@ -37,7 +37,7 @@ namespace JWT.Controllers
         {
             AuthenticateService service = new AuthenticateService();
             var token = service.Authenticate();
-            //userDto = service.GetUserDataForLogin();
+            ////userDto = service.GetUserDataForLogin();
 
             return Ok(new
             {
