@@ -7,6 +7,7 @@ namespace JWT.Controllers
     //1
     //3
     //5
+    //7
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
