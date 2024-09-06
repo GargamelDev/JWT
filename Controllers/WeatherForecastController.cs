@@ -34,6 +34,9 @@ namespace JWT.Controllers
             })
             .ToArray();
         }
+        //side a
+        //side b
+        //side c
 
         [HttpPost]
         [AllowAnonymous]
